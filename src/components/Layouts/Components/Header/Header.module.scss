@@ -1,0 +1,307 @@
+.warraper {
+ 
+  background-color: var(--clorBackground2);
+  height: 102px;
+  border-radius: 20px;
+}
+.Container {
+  width: 100%;
+  padding: 0 15px;
+}
+.Row {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.BoxAction {
+  display: flex;
+  height: 100%;
+  flex-direction: row-reverse;
+  margin-right: 6px;
+}
+.BoxActionRow {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.iconToggole {
+  font-size: 20px;
+  color: var(--colermain);
+  margin-left: 6px;
+  cursor: pointer;
+}
+.BoxIconHver{
+  cursor: pointer;
+  &:hover > .BoxIconHover{
+    display: block;
+  }
+}
+.BoxIcon {
+  position: relative;
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  input {
+    animation: hientutu 0.8s linear;
+  }
+  .BoxIconHover {
+    position: relative;
+    $paddingLT: 24px;
+    position: absolute;
+    background-color: #fff;
+    min-width: 240px;
+    right: 0px;
+    top: 80px;
+    display:none ;
+    animation:animationBoxHover 0.4s linear ;
+    &::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      top: -36px;
+     
+    }
+    &::after{
+      $Length: 15px ;
+      content: "";
+      position: absolute;
+      border-style: solid;
+      border-width: $Length $Length $Length $Length;
+      border-color: transparent transparent  var(--colermain) transparent;
+      top: -25px;
+        right: 15px;
+    }
+    Header {
+      background-color: var(--colermain);
+      padding: 26px $paddingLT 15px $paddingLT;
+      color: white;
+      h1 {
+        font-size: 20px;
+      }
+    }
+    ul {
+      padding: 26px $paddingLT 15px $paddingLT;
+
+      a {
+        width: 100%;
+        color: black;
+        padding: 10px 0;
+        display: block;
+        cursor: pointer;
+        transition: margin-left 0.4s linear, color 0.4s linear;
+        &:hover {
+          color: var(--colermain);
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+@keyframes animationBoxHover{
+from{
+  opacity: 0.4;
+  transform: translateY(-10px);
+}
+to{
+  opacity: 0.9;
+}
+}
+@keyframes hientutu {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.iconSearch {
+  $Length: 30px;
+  font-size: 20px;
+  color: white;
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: var(--colermain);
+  cursor: pointer;
+  transform: all 0.4s linear;
+  &:hover {
+    filter: brightness(130%);
+  }
+}
+.Mess {
+  position: relative;
+  display: block;
+  font-size: 25px;
+  cursor: pointer;
+}
+.quality {
+  $l: 24px;
+  position: absolute;
+  background-color: var(--colermain);
+  width: $l;
+  height: $l;
+  display: block;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: $l;
+  top: -15px;
+  left: 15px;
+}
+.contentMess {
+  border-radius: 4px;
+  background-color: #fff;
+
+  width: 356px;
+  z-index: 2000;
+  position: absolute;
+  background-color: cadetblue;
+  right: -108px;
+  top: 20px;
+  height: 107px;
+  background-color: var(--colermain);
+  animation: LeftToRight 0.4s linear;
+
+  &.activeAnimation {
+    animation: RightToLeft 0.4s linear;
+  }
+}
+.textMess {
+  background-color: white;
+  height: 358px;
+  overflow: scrollY;
+  ul {
+    margin: 0 10px;
+  }
+  h2 {
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  li {
+    display: flex;
+
+    margin: 15px 0;
+    img {
+      align-self: flex-end;
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+    }
+    .boxMessage {
+      background-color: var(--colermain);
+      color: rgb(199, 42, 42);
+      border-radius: 6px;
+      max-width: 190px;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 8px;
+    }
+    p {
+      width: 100%;
+      word-wrap: break-word;
+      color: white;
+      padding: 10px;
+      margin: 0;
+    }
+
+    &.active {
+      flex-direction: row-reverse;
+
+      .licon {
+        flex-direction: row-reverse;
+
+        img {
+          margin: 0 0 0 8px;
+        }
+      }
+    }
+  }
+  .licon {
+    display: flex;
+  }
+}
+@keyframes LeftToRight {
+  from {
+    opacity: 0.4;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes RightToLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.2;
+    transform: translateX(100px);
+  }
+}
+.Header {
+  margin: 20px;
+  display: flex;
+  .HeaderL {
+    flex: 1;
+    h4 {
+      color: #fff;
+      font-size: 16px;
+    }
+    img {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+  }
+  .removeMess {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+.textMess {
+  h5 {
+    color: #fff;
+    font-size: 16px;
+  }
+}
+.GroupInputMess {
+  display: flex;
+  width: 100%;
+  background-color: #f5f7fb;
+  height: 50px;
+  align-items: center;
+  padding-right: 25px;
+  input {
+    padding-left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    flex: 1;
+  }
+  .addMess {
+    color: var(--colermain);
+    cursor: pointer;
+    transition: all 0.5s linear;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}

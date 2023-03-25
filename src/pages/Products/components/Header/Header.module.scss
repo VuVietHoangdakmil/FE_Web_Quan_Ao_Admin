@@ -1,0 +1,37 @@
+.wrapper{
+    padding: 30px;
+
+    h2{
+        font-size: 25px;
+        color: var(--colorTextTitle);
+    }
+    .TitleTable{
+        color: var(--colorTextTitle);
+    }
+    .RowAction{
+        margin-top: 24px;
+        align-items: center;
+        height: 100%;
+    }
+    .ColBtn{
+        display: flex;
+        align-items: center;
+       
+    }
+    
+    button{
+        height: 100%;
+        width: 100%;
+        font-size: 15px;
+        color: #fff;
+        background-color: var(--colermain);
+        border-radius: 6px;
+        cursor: pointer;
+        border: none;
+        transition:  opacity 0.4s linear;
+        &:hover{
+            opacity: 0.4;
+        }
+    }
+
+}

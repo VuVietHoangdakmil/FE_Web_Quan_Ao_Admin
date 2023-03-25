@@ -1,0 +1,85 @@
+@import "normalize.css";
+@import "~bootstrap/scss/bootstrap";
+
+:root {
+  --clorBackground: #fbf6f0;
+  --colermain: #f64e60;
+  --clorBackground2: #fff;
+  --colorGrey: #f3f6f9;
+  --textColorLiSliderBar: #144339;
+
+  // table-layout
+  --colorTextTitle: #474d58;
+  --colorTexteChiMuc: #757575;
+  --colorTextContent: #7e7172;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+  font-size: 62.3%;
+  font-size: 1rem;
+}
+.RestCOL {
+  padding: 0;
+  transition: width 0.3s linear;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  image-rendering: pixelated;
+  object-fit: cover;
+}
+//css pagination
+.pagenationCSS {
+  display: flex;
+  
+  li {
+    $w: 35px;
+    background-color: transparent;
+    margin: 0 5px;
+    width: $w;
+    height: $w;
+    border-radius: 6px;
+    text-align: center;
+    line-height: $w;
+    transition:  all 0.4s ease-in;
+    &.active {
+      background-color: var(--colermain);
+      color: #fff;
+    }
+    &:hover {
+      background-color: var(--colermain);
+      color: #fff;
+
+     &,.prevcustom,
+      .nextcustom {
+          color:#fff;;
+      }
+    }
+
+    .prevcustom,
+    .nextcustom {
+      color: var(--colorTextTitle);
+
+
+    }
+    
+  }
+     a {
+      display: block;
+     }
+}
+
+//

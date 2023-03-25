@@ -1,0 +1,172 @@
+.wrapper {
+  background-color: var(--clorBackground2);
+  height: 100vh;
+
+  h2 {
+    $H: 60px;
+    width: 100%;
+    text-align: center;
+    height: $H;
+    line-height: $H;
+    background-color: var(--colorGrey);
+    margin-bottom: 40px;
+  }
+  ul {
+    margin: 0;
+
+    li {
+      position: relative;
+      $boder: 14px;
+      border-radius: $boder;
+      // overflow: hidden;
+      &:hover {
+        background-color: var(--colorGrey);
+        & > a {
+          color: var(--colermain);
+        }
+      }
+
+      &.active {
+        background-color: var(--colorGrey);
+        & > a {
+          color: var(--colermain);
+        }
+      }
+
+      .classIcon {
+        margin-right: 10px;
+        color: rgb(194, 187, 187);
+        
+      }
+      a {
+        display: flex;
+        padding: 9px 0 9px 30px;
+        transition: color 0.5s linear;
+        color: var(--textColorLiSliderBar);
+        width: 100%;
+        height: 100%;
+
+        align-items: center;
+
+        .wrapperIconContent {
+          flex: 1;
+        }
+        .iconArow {
+          margin-right: 15px;
+          transition: transform 0.3s linear;
+          &.active {
+            transform: rotate(89deg);
+          }
+        }
+      }
+    }
+    .ulCon {
+      transition: all 0.5s linear;
+      height: 0px;
+      overflow: hidden;
+
+      margin-left: 60px;
+
+      a {
+        padding-left: 0;
+      }
+      li {
+        padding-left: 5px;
+      }
+      &.active {
+        height: 200px;
+      }
+    }
+  }
+
+  &.active {
+    h2 {
+      font-size: 20px;
+    }
+    .wrapperIconContent {
+      text-align: center;
+    }
+    a {
+      padding-left: 0;
+     
+      &:hover {
+        .noneCol {
+          display: flex;
+        }
+        .noneCol1 {
+          display: block;
+          color: var(--colermain);
+         
+        }
+        &,
+        li {
+          background-color: var(--colorGrey);
+        }
+      }
+    }
+
+    .classIcon {
+      margin: 0 0 0 6px;
+    }
+    .boxUL {
+      position: relative;
+    }
+    ul {
+      $rigthPosion: -200px;
+      .noneCol {
+        position: absolute;
+        display: none;
+        height: 100%;
+        width: 200px;
+        background-color: var(--colorGrey);
+        right: $rigthPosion;
+        top: 0;
+        align-items: center;
+        padding-left: 20px;
+        border-bottom-right-radius: 14px;
+        border-top-right-radius: 14px;
+        &.active {
+         
+          display: flex;
+        }
+      }
+      .noneCol1 {
+        position: absolute;
+        display: none;
+        height: 100%;
+        width: 18px;
+        height: 18px;
+        right: $rigthPosion;
+        top: 25%;
+        &.active {
+          display: block;
+        }
+      }
+    }
+    .ulCon {
+      $width: 200px ;
+      position: absolute;
+      right: -$width;
+       margin: 0;
+       width: $width;
+      background-color: var(--colorGrey);
+      &.active{
+        height: 140px;
+        li{
+          display: block;
+        }
+      }
+    }
+
+    .LiconCss {
+     
+      border-radius: 0%;
+    }
+    #NoBoder{
+      border-radius: 0%;
+    }
+            #iconIcon{
+              margin-right: 10px;
+            }
+  }
+}
