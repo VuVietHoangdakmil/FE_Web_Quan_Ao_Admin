@@ -57,7 +57,8 @@ function SliderBar() {
 
   const { pathname } = useLocation();
   const [ListItems, setListItems] = useState(ListItemsdata);
-  const { isToggle } = getLocalStorage("isCol");
+  const { isToggle } = getLocalStorage("isCol") ?? true;
+
   const HanderlerClick = (id, toggle) => {
     setListItems((arr) => {
       return arr.map((item) => {

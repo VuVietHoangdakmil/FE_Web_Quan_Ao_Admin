@@ -23,3 +23,21 @@ td{
 .btnRmove{
 background-color: rgb(227, 21, 21);
 }
+.customCol{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.RemoveSelect{
+    background-color: var(--colermain);
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 6px;
+   padding: 8px 12px;
+   &:hover{
+    opacity: 0.5;
+   }
+}
+.CheckBoxCss{
+    cursor: pointer;
+}

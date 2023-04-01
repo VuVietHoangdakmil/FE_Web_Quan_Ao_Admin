@@ -1,4 +1,4 @@
-import {storeLocal} from "./redux/stores";
+import { storeLocal } from "./redux/stores";
 
 import React from "react";
 import ReactDOM from "react-dom/client";

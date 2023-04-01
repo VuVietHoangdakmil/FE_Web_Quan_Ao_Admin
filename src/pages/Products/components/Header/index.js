@@ -1,14 +1,19 @@
 import styles from "./Header.module.scss";
 import { InputNoRef } from "../../../../components/Input";
+import { onChangeInput, UpdateInput } from "../../../../redux/actions";
+import { ADD } from "../../../../types";
 
-import { useState } from "react";
-import clsx from "clsx";
+import { debounce } from "lodash";
 import { valueInputSearchSlector } from "../../../../redux/selectors";
 import { useSelector, useDispatch } from "react-redux";
 import { Row, Col } from "react-bootstrap";
-function Header({ title }) {
+function Header({ title, setHidenForm, setType }) {
+  const Dispatch = useDispatch();
   const valueSearch = useSelector(valueInputSearchSlector);
-  console.log(valueSearch);
+  const HandlerOnChange = debounce((e) => {
+    Dispatch(onChangeInput(e.target.value));
+  }, 500);
+
   return (
     <div className={styles.wrapper}>
       <h2> Data {title}</h2>
@@ -19,10 +24,23 @@ function Header({ title }) {
         <Col>
           <Row>
             <Col xl={9} lg={9} md={9} className={styles.ColInput}>
-              <InputNoRef placeholder="seacrh" />
+              <InputNoRef
+                placeholder="Seacrh Name"
+                onChange={HandlerOnChange}
+              />
             </Col>
             <Col xl={3} lg={3} md={3} className={styles.ColBtn}>
-              <button>Add new</button>
+              <button
+                onClick={(e) => {
+                  Dispatch(
+                    UpdateInput({ name:"", category:"", PurchasePrice:"", Price:"" })
+                  );
+                  setType(ADD);
+                  setHidenForm(true);
+                }}
+              >
+                Add new
+              </button>
             </Col>
           </Row>
         </Col>

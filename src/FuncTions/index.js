@@ -1,4 +1,3 @@
-
 const addCommas = (value) => {
   const stringFormat = `${value}`;
   const x = stringFormat.split(".");
@@ -36,7 +35,7 @@ const removeVietnameseTones = (str) => {
     str = str.replace(new RegExp(`[${map[key]}]`, "g"), key);
   }
 
-  return str;
+  return str.replace(/\s+/g, "");
 };
 const GetDate = (data) => {
   const d = new Date(data);
